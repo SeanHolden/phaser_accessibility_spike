@@ -1,8 +1,10 @@
 module Accessibility {
     export class Boot extends Phaser.State {
-        create() {
+        preload() {
             this.input.maxPointers = 1;
-            
+        }
+
+        create() {
             this.state.start('Preloader', true, false);
         }
     }

@@ -2,12 +2,9 @@
     baseUrl: "../intermediate",
     include: [
         "phaser.min",
-        "src/states/Boot",
-        "src/sprites/Button",
-        "src/levels/Level",
         "src/states/Preloader",
-        "src/graphics/FocusRing",
-        "src/lib/Element",
+        "src/states/Boot",
+        "src/levels/Level",
         "src/Game"
     ],
     out: "../intermediate/main.js",
