@@ -8,7 +8,7 @@ module Accessibility {
             const buttonRight = new Button(this.game, 350, 100, 'buttonOff');
             const focusRing = new FocusRing(this.game);
 
-            const linkOne = new Accessibility.Element(this.game, {
+            const linkOne = new Element(this.game, {
                 tag: 'a',
                 text: 'Left Button',
                 attributes: {
@@ -17,7 +17,7 @@ module Accessibility {
                 },
                 parent: canvas
             });
-            const linkTwo = new Accessibility.Element(this.game, {
+            const linkTwo = new Element(this.game, {
                 tag: 'a',
                 text: 'Right Button',
                 attributes: {
