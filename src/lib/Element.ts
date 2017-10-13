@@ -3,21 +3,18 @@ module Accessibility {
        tag: string,
        text: string, 
        attributes: any,
-       parent: HTMLElement,
-       focusOnSprite?: Phaser.Sprite
+       parent: HTMLElement
     }
 
     export class Element {
         game: Phaser.Game;
         params: ElementParams;
-        focusRing: FocusRing;
+        el: HTMLElement;
 
-        constructor(game: Phaser.Game, params: ElementParams, focusRing?: FocusRing) {
+        constructor(game: Phaser.Game, params: ElementParams) {
             this.game = game;
             this.params = params;
-            if(focusRing) {
-                this.focusRing = focusRing;
-            }
+            this.create();
         }
 
         create() {
@@ -29,14 +26,15 @@ module Accessibility {
             el.appendChild(elText);
 
             this.params.parent.appendChild(el);
-            if (this.params.focusOnSprite) {
-                const self = this;
-                const sprite = this.params.focusOnSprite;
+            this.el = el;
+            //if (this.params.focusOnSprite) {
+            //    const self = this;
+            //    const sprite = this.params.focusOnSprite;
 
-                el.addEventListener("focus", function() {
-                    self.focusRing.focusOn(sprite);
-                });
-            }
+            //    el.addEventListener("focus", function() {
+            //        self.focusRing.focusOn(sprite);
+            //    });
+            //}
         }
     }
 }

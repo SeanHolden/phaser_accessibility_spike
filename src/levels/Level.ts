@@ -1,42 +1,34 @@
 module Accessibility {
     export class Level extends Phaser.State {
-        buttonLeft: Phaser.Sprite;
-        buttonRight: Phaser.Sprite;
-        focusRing: FocusRing;
-        linkOne: Accessibility.Element
-        linkTwo: Accessibility.Element;
-
         create() {
-            this.buttonLeft = this.game.add.sprite(100, 100, 'buttonOff');
-            this.buttonRight = this.game.add.sprite(350, 100, 'buttonOff');
-            this.focusRing = new FocusRing(this.game);
-
+            this.game.stage.backgroundColor = '#943021';
             const canvas = this.game.canvas;
 
-            this.linkOne = new Accessibility.Element(this.game, {
+            const buttonLeft = new Button(this.game, 100, 100, 'buttonOff');;
+            const buttonRight = new Button(this.game, 350, 100, 'buttonOff');
+            const focusRing = new FocusRing(this.game);
+
+            const linkOne = new Accessibility.Element(this.game, {
                 tag: 'a',
                 text: 'Left Button',
                 attributes: {
                     tabindex: '1',
                     href: '#thingone'
                 },
-                parent: canvas,
-                focusOnSprite: this.buttonLeft
-            }, this.focusRing);
-
-            this.linkTwo = new Accessibility.Element(this.game, {
+                parent: canvas
+            });
+            const linkTwo = new Accessibility.Element(this.game, {
                 tag: 'a',
                 text: 'Right Button',
                 attributes: {
                     tabindex: '2',
                     href: '#thingtwo'
                 },
-                parent: canvas,
-                focusOnSprite: this.buttonRight
-            }, this.focusRing);
+                parent: canvas
+            });
 
-            this.linkOne.create();
-            this.linkTwo.create();
+            focusRing.linkUp(linkOne, buttonLeft);
+            focusRing.linkUp(linkTwo, buttonRight);
         }
     }
 }
