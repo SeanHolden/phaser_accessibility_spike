@@ -27,14 +27,6 @@ module Accessibility {
 
             this.params.parent.appendChild(el);
             this.el = el;
-            //if (this.params.focusOnSprite) {
-            //    const self = this;
-            //    const sprite = this.params.focusOnSprite;
-
-            //    el.addEventListener("focus", function() {
-            //        self.focusRing.focusOn(sprite);
-            //    });
-            //}
         }
     }
 }
