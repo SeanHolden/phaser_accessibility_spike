@@ -16,6 +16,7 @@
     "**/*.spec.ts"
   ],
   "files": [
-    "./node_modules/phaser-ce/typescript/phaser.d.ts"
+    "./node_modules/phaser-ce/typescript/phaser.d.ts",
+    "./lib/gmi-platform.d.ts"
   ]
 }

@@ -1,7 +1,7 @@
 module Accessibility {
     export class Game extends Phaser.Game {
         constructor() {
-            super(800, 600, Phaser.AUTO, '', null);
+            super(800, 600, Phaser.AUTO, gmi.gameContainerId, null);
 
             this.state.add('Boot', Boot, false);
             this.state.add('Preloader', Preloader, false);
@@ -12,4 +12,7 @@ module Accessibility {
     }
 } 
 
-var game = new Accessibility.Game();
+const echoStatsLabel = { name: 'accessibilitySpike', value: 'testValue'};
+const echoStatsOptions = { statsLabel: echoStatsLabel };
+const gmi = getGMI(echoStatsOptions);
+const game = new Accessibility.Game();
