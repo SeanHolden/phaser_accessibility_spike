@@ -3,10 +3,10 @@ module Accessibility {
         create() {
             this.game.stage.backgroundColor = '#943021';
             const canvas = this.game.canvas;
+            const focusRing = new FocusRing(this.game);
 
             const buttonLeft = new Button(this.game, 100, 100, 'buttonOff');;
             const buttonRight = new Button(this.game, 350, 100, 'buttonOff');
-            const focusRing = new FocusRing(this.game);
 
             const linkOne = new Element(this.game, {
                 tag: 'a',
