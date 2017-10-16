@@ -8,7 +8,7 @@ module Accessibility {
         }
 
         toggle() {
-            console.log('clicked');
+            console.log('clicked button');
         }
     }
 }

@@ -12,11 +12,15 @@ module Accessibility {
             this.drawRect(sprite.x-5, sprite.y-5, sprite.width+10, sprite.height+10);
         }
 
-        linkUp(accessibilityElement: Element, sprite: Phaser.Sprite | Phaser.Button) {
+        linkUp(accessibilityElement: Element, sprite: Button) {
             const self = this;
 
             accessibilityElement.el.addEventListener("focus", function () {
                 self.focusOn(sprite);
+            });
+
+            accessibilityElement.el.addEventListener("click", function() {
+                sprite.toggle();
             });
         }
     }
